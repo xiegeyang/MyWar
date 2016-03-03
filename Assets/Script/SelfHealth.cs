@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SelfHealth : MonoBehaviour {
+public class EnemyHealth : MonoBehaviour {
 
     public Texture2D frame;
     public Rect framPosition;

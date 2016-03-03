@@ -22,11 +22,11 @@ public class Fighter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(health);
+        //Debug.Log(health);
         
         
         if (Input.GetKey(KeyCode.Alpha1))
-        {
+        {            
             anim.Play(attack.name);
             ClickToMove.attack = true;
             if (opponent != null)

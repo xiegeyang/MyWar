@@ -66,7 +66,10 @@
     <Compile Include="Assets\Script\ClickToMove.cs" />
     <Compile Include="Assets\Script\EnemyHealth.cs" />
     <Compile Include="Assets\Script\Fighter.cs" />
+    <Compile Include="Assets\Script\HealthBar.cs" />
+    <Compile Include="Assets\Script\LookAtCam.cs" />
     <Compile Include="Assets\Script\Mob.cs" />
+    <Compile Include="Assets\Script\SelfHealth.cs" />
     <Compile Include="Assets\Script\SmoothFollow.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,8 +13,9 @@ public class Mob : MonoBehaviour {
     public AnimationClip idle;
     public AnimationClip attack;
     public AnimationClip die;
-    private Animation ani;
-    public int health;
+    private Animation ani;    
+    public float maxHealth;
+    public float currHealth;
     public double impactTime = 0.36;
     private bool impacted;
     public int damage;
@@ -22,7 +23,7 @@ public class Mob : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         ani = GetComponent<Animation>();
-        
+        currHealth = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -35,12 +36,8 @@ public class Mob : MonoBehaviour {
         else
         {
             dieMethod();
-        }
-
-           
-	}
-
-    
+        }           
+	}    
 
     void chase()
     {
@@ -70,9 +67,7 @@ public class Mob : MonoBehaviour {
         else
         {
             ani.CrossFade(idle.name);
-        }
-       
-        
+        }             
     }
 
     void lookAt()
@@ -87,16 +82,16 @@ public class Mob : MonoBehaviour {
 
     public void getHit(int damage)
     {
-        health = health - damage;  
-        if(health < 0)
+        currHealth = currHealth - damage;  
+        if(currHealth < 0)
         {
-            health = 0;
+            currHealth = 0;
         }      
     }
 
     bool isDead()
     {
-        if (health <= 0)
+        if (currHealth <= 0)
         {            
             return true;
         }
